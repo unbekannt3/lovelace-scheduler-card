@@ -9,6 +9,10 @@
 
 A custom Home Assistant Lovelace card for displaying and editing native schedule entities (`schedule.*`) directly in your dashboard. No custom integration or backend required.
 
+<img width="397" height="522" alt="Screenshot_20260214_191242" src="https://github.com/user-attachments/assets/dd4d71f9-1be0-4435-850e-72c0856d7f2d" />
+<img width="394" height="518" alt="image" src="https://github.com/user-attachments/assets/0acfa077-5f5e-49b4-a665-f6341cb001b8" />
+
+
 ---
 
 ## Features
