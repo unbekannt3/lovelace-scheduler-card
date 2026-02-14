@@ -145,10 +145,10 @@ The editor adapts to your Home Assistant language.
 [homeassistant]: https://img.shields.io/badge/home%20assistant-%2341BDF5.svg?style=flat-square&logo=home-assistant&logoColor=white
 [hacs-url]: https://github.com/hacs/integration
 [hacs-badge]: https://img.shields.io/badge/hacs-custom-orange.svg?style=flat-square
-[release-badge]: https://img.shields.io/github/v/release/unbekannt3/hass-dayscheduler-card?style=flat-square
-[downloads-badge]: https://img.shields.io/github/downloads/unbekannt3/hass-dayscheduler-card/total?style=flat-square
-[build-badge]: https://img.shields.io/github/actions/workflow/status/unbekannt3/hass-dayscheduler-card/build.yaml?branch=main&style=flat-square
-[license-badge]: https://img.shields.io/github/license/unbekannt3/hass-dayscheduler-card?style=flat-square&logo=opensourceinitiative&logoColor=white&color=0080ff
+[release-badge]: https://img.shields.io/github/v/release/unbekannt3/lovelace-scheduler-card?style=flat-square
+[downloads-badge]: https://img.shields.io/github/downloads/unbekannt3/lovelace-scheduler-card/total?style=flat-square
+[build-badge]: https://img.shields.io/github/actions/workflow/status/unbekannt3/lovelace-scheduler-card/build.yaml?branch=main&style=flat-square
+[license-badge]: https://img.shields.io/github/license/unbekannt3/lovelace-scheduler-card?style=flat-square&logo=opensourceinitiative&logoColor=white&color=0080ff
 
 <!-- References -->
 
