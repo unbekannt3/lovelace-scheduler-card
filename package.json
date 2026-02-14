@@ -1,6 +1,6 @@
 {
 	"name": "lovelace-scheduler-card",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "Lovelace Scheduler Card - Display and edit Home Assistant schedule entities",
 	"main": "src",
 	"scripts": {
