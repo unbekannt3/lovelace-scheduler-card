@@ -1,0 +1,154 @@
+# Lovelace Scheduler Card
+
+[![homeassistant][homeassistant]][home-assistant]
+[![hacs][hacs-badge]][hacs-url]
+[![release][release-badge]][release-url]
+![downloads][downloads-badge]
+![build][build-badge]
+[![license][license-badge]][license-url]
+
+A custom Home Assistant Lovelace card for displaying and editing native schedule entities (`schedule.*`) directly in your dashboard. No custom integration or backend required.
+
+---
+
+## Features
+
+- **Week & Day View** - Toggle between a 7-day overview and single day view
+- **Inline Editing** - Create, resize, and delete time slots directly on the card
+- **Drag to Create** - Click and drag on empty space to create new time slots
+- **Resize Slots** - Drag the top or bottom edge of a slot to adjust its time range
+- **Delete Slots** - Click the delete button on any slot to remove it
+- **Current Time Marker** - Red line showing the current time on today's column
+- **Auto-Scroll** - Automatically scrolls to the current time on load
+- **15-Minute Grid** - Snaps to 15-minute intervals (matching HA schedule precision)
+- **Touch & Mouse Support** - Works with both pointer devices using the Pointer Events API
+- **Visual Editor** - Full GUI configuration editor
+- **Localization** - English and German
+
+---
+
+## Installation
+
+### HACS (Recommended)
+
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=unbekannt3&repository=lovelace-scheduler-card&category=plugin)
+
+Or manually add the custom repository:
+
+1. Open HACS in your Home Assistant instance
+2. Click the three dots menu → _Custom repositories_
+3. Add `https://github.com/unbekannt3/lovelace-scheduler-card` with category _Dashboard_
+4. Search for "Lovelace Scheduler Card" and install
+5. Restart Home Assistant
+
+### Manual
+
+1. Download `dayscheduler-card.js` from the [latest release][release-url]
+2. Place it in your `config/www` folder
+3. Add the resource:
+   - **UI:** _Settings_ → _Dashboards_ → _Resources_ → _Add Resource_
+     - URL: `/local/dayscheduler-card.js`
+     - Type: `JavaScript Module`
+   - **YAML:**
+
+     ```yaml
+     lovelace:
+       resources:
+         - url: /local/dayscheduler-card.js
+           type: module
+     ```
+
+---
+
+## Usage
+
+### Prerequisites
+
+Create a schedule helper in Home Assistant:
+_Settings_ → _Devices & Services_ → _Helpers_ → _Create Helper_ → _Schedule_
+
+### Card Configuration
+
+```yaml
+type: custom:dayscheduler-card
+entity: schedule.heating_allowed
+```
+
+### All Options
+
+| Name                | Type    | Default                | Description                                   |
+| :------------------ | :------ | :--------------------- | :-------------------------------------------- |
+| `entity`            | string  | _Required_             | Schedule entity ID (e.g., `schedule.my_plan`) |
+| `title`             | string  | Entity friendly name   | Card title                                    |
+| `default_view`      | string  | `week`                 | Default view: `week` or `day`                 |
+| `slot_color`        | string  | `var(--primary-color)` | Color for time slots                          |
+| `show_current_time` | boolean | `true`                 | Show current time marker line                 |
+| `card_size`         | number  | `8`                    | Card height in grid rows                      |
+
+### Editing
+
+1. Click the **pencil icon** to enter edit mode
+2. **Create slots:** Click and drag on empty space in a day column
+3. **Resize slots:** Drag the top or bottom edge of an existing slot
+4. **Delete slots:** Click the **✕** button on a slot
+5. Click **✓** to save or **✕** to cancel
+
+All changes are saved via the `schedule/update` WebSocket API.
+
+---
+
+## How It Works
+
+This card uses Home Assistant's native WebSocket APIs:
+
+- `schedule/list` - Load schedule data
+- `schedule/update` - Save changes (requires admin privileges)
+
+No custom integration or backend component is needed. The card works with any `schedule.*` entity created through the Helpers UI.
+
+---
+
+## Development
+
+Requires Node.js 22+ and pnpm.
+
+```bash
+pnpm install          # Install dependencies
+pnpm watch            # Dev server on localhost:8084
+pnpm build            # Production build
+pnpm build:dev        # Development build (with console logs)
+pnpm typecheck        # TypeScript type checking
+pnpm format           # Format with Prettier
+```
+
+Add the dev resource in HA: `http://<your-ip>:8084/dayscheduler-card.js` (JavaScript Module)
+
+---
+
+## Internationalization
+
+The editor adapts to your Home Assistant language.
+
+**Supported languages:**
+
+- 🇺🇸 English
+- 🇩🇪 German
+
+---
+
+<!-- Badges -->
+
+[homeassistant]: https://img.shields.io/badge/home%20assistant-%2341BDF5.svg?style=flat-square&logo=home-assistant&logoColor=white
+[hacs-url]: https://github.com/hacs/integration
+[hacs-badge]: https://img.shields.io/badge/hacs-custom-orange.svg?style=flat-square
+[release-badge]: https://img.shields.io/github/v/release/unbekannt3/hass-dayscheduler-card?style=flat-square
+[downloads-badge]: https://img.shields.io/github/downloads/unbekannt3/hass-dayscheduler-card/total?style=flat-square
+[build-badge]: https://img.shields.io/github/actions/workflow/status/unbekannt3/hass-dayscheduler-card/build.yaml?branch=main&style=flat-square
+[license-badge]: https://img.shields.io/github/license/unbekannt3/hass-dayscheduler-card?style=flat-square&logo=opensourceinitiative&logoColor=white&color=0080ff
+
+<!-- References -->
+
+[home-assistant]: https://www.home-assistant.io/
+[hacs]: https://hacs.xyz
+[release-url]: https://github.com/unbekannt3/hass-dayscheduler-card/releases
+[license-url]: https://github.com/unbekannt3/hass-dayscheduler-card/blob/main/LICENSE

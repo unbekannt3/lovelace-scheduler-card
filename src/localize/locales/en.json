@@ -1,0 +1,33 @@
+{
+	"card": {
+		"edit": "Edit",
+		"save": "Save",
+		"cancel": "Cancel",
+		"week": "Week",
+		"day": "Day",
+		"loading": "Loading schedule...",
+		"not_found": "Schedule entity not found",
+		"error": "Error loading schedule"
+	},
+	"days": {
+		"mon": "Mon",
+		"tue": "Tue",
+		"wed": "Wed",
+		"thu": "Thu",
+		"fri": "Fri",
+		"sat": "Sat",
+		"sun": "Sun"
+	},
+	"editor": {
+		"entity": "Entity (schedule.*)",
+		"title": "Title (optional)",
+		"default_view": "Default view",
+		"grid_step": "Grid step (minutes)",
+		"start_hour": "Start hour",
+		"end_hour": "End hour",
+		"px_per_hour": "Pixels per hour",
+		"slot_color": "Slot color",
+		"show_current_time": "Show current time marker",
+		"card_size": "Card size"
+	}
+}

@@ -1,0 +1,38 @@
+{
+	"name": "lovelace-scheduler-card",
+	"version": "0.1.0",
+	"description": "Lovelace Scheduler Card - Display and edit Home Assistant schedule entities",
+	"main": "src",
+	"scripts": {
+		"build": "webpack --mode production --output-filename dayscheduler-card.js",
+		"build:dev": "webpack --mode development --output-filename dayscheduler-card.js",
+		"watch": "webpack serve",
+		"typecheck": "tsc --noEmit",
+		"format": "prettier --write --ignore-path=.prettierignore .",
+		"format:check": "prettier --check ."
+	},
+	"keywords": [
+		"home-assistant",
+		"lovelace",
+		"schedule",
+		"custom-card"
+	],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.29.0",
+		"@babel/preset-env": "^7.29.0",
+		"babel-loader": "^10.0.0",
+		"babel-plugin-template-html-minifier": "^4.1.0",
+		"prettier": "^3.8.1",
+		"terser-webpack-plugin": "^5.3.16",
+		"ts-loader": "^9.5.0",
+		"typescript": "^5.8.0",
+		"webpack": "^5.105.2",
+		"webpack-cli": "^6.0.1",
+		"webpack-dev-server": "^5.2.3"
+	},
+	"dependencies": {
+		"lit": "^3.3.2"
+	}
+}

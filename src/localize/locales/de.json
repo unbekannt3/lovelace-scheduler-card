@@ -1,0 +1,33 @@
+{
+	"card": {
+		"edit": "Bearbeiten",
+		"save": "Speichern",
+		"cancel": "Abbrechen",
+		"week": "Woche",
+		"day": "Tag",
+		"loading": "Zeitplan wird geladen...",
+		"not_found": "Zeitplan-Entität nicht gefunden",
+		"error": "Fehler beim Laden des Zeitplans"
+	},
+	"days": {
+		"mon": "Mo",
+		"tue": "Di",
+		"wed": "Mi",
+		"thu": "Do",
+		"fri": "Fr",
+		"sat": "Sa",
+		"sun": "So"
+	},
+	"editor": {
+		"entity": "Entität (schedule.*)",
+		"title": "Titel (optional)",
+		"default_view": "Standardansicht",
+		"grid_step": "Raster (Minuten)",
+		"start_hour": "Startstunde",
+		"end_hour": "Endstunde",
+		"px_per_hour": "Pixel pro Stunde",
+		"slot_color": "Slot-Farbe",
+		"show_current_time": "Aktuelle Zeitmarkierung anzeigen",
+		"card_size": "Kartengröße"
+	}
+}
